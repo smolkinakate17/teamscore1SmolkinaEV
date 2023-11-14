@@ -23,18 +23,29 @@ public class TwoDotTwo {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(" - это ");
 
-        int temp = days / 10;
-        if (temp > 9) {
-            stringBuilder.append(days).append(" дней");
-        } else if (temp == 1) {
-            stringBuilder.append(days).append(" дней");
-        } else if (days % 10 == 1) {
-            stringBuilder.append(days).append(" день");
-        } else if (days % 10 == 2 || days % 10 == 3 || days % 10 == 4) {
-            stringBuilder.append(days).append(" дня");
-        } else {
-            stringBuilder.append(days).append(" дней");
+        int temp;
+        //флаг для определения записали ли мы уже дни в stringBuilder
+        boolean appendDays=false;
+        String dayStr=String.valueOf(days);
+        if(dayStr.length()>=2){
+            //если предпоследняя цифра числа = 1
+            if(dayStr.charAt(dayStr.length()-2)=='1'){
+                stringBuilder.append(days).append(" дней");
+                appendDays=true;
+            }
+
         }
+
+        if(!appendDays){
+            if (days % 10 == 1) {
+                stringBuilder.append(days).append(" день");
+            } else if (days % 10 == 2 || days % 10 == 3 || days % 10 == 4) {
+                stringBuilder.append(days).append(" дня");
+            } else {
+                stringBuilder.append(days).append(" дней");
+            }
+        }
+
         stringBuilder.append(", ");
 
         temp = hours / 10;

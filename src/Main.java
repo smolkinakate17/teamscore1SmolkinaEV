@@ -15,13 +15,13 @@ public class Main {
         //OneDotFour.printLongestSeries();
 
         //задача 2.1
-        //TwoDotOne.printResult();
+        TwoDotOne.printResult();
 
         //задача 2.2
-        Scanner in = new Scanner(System.in);
+        /*Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         TwoDotTwo.printTime(n);
-        in.close();
+        in.close();*/
         //TwoDotTwo.printTime(Integer.parseInt(args[0]));
     }
 }
